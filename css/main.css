@@ -97,47 +97,79 @@ textarea {
 
 
 html {
-  background-color:#011C40;
+  background-image:url('../img/main.jpg');
+  background-size: cover;
   height: 100%;
+  width: 100%;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  font-family: 'Lobster', cursive;
+  padding: 0 2em;
   font-size: 1.25em;
-  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
   /*add display:flex and set justify-content to space-between*/
-  font-weight: 700;
+  flex-flow: row wrap;
   display: flex;
   justify-content: space-between;
-  background-color: #011C40;
-  border-top: 3px solid #6F77A6;
-  border-bottom: 3px solid #6F77A6;
-  padding: 25px 10px 25px 10px;
+ 
 }
 
-.div-1, .div-2, .div-3 {
+.flex-items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  /*set display to flex and vertically & horizontally align by setting justify-content and align-items to center*/
+  line-height: 1.5em;
+  font-size: 1.6em;
+  max-width: 1200px;
+}
+
+header,
+footer {
+  background-color: #F24BA7;
+  color: #F277B0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Parisienne', cursive;
+}
+
+header {
+	font-size: 3em;
+}
+
+main {
+  background-color: #EDF252;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  font-size: 2em;
+}
+
+#div-1,
+#div-2,
+#div-3 {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
+  color: #F2D5A0;
   line-height: 1.5em;
   font-size: 1em;
-  background-color: #011C40;
-  height: 350px;
+  background-color: #F277B0;
+  height: auto;
   display: flex;
-  width: 30%;
   justify-content: center;
   align-items: center;
   font-family: 'Antic Didone', serif;
-  border-right: 3px solid #6F77A6;
-  padding: 10px 10px 10px 10px;
+  border-bottom: 1px solid #6F77A6;
+
 }
 
-.div-3 {
-	  border-right: none;
-}
+
 
 
 
@@ -234,6 +266,20 @@ body {
    Inlined to avoid the additional HTTP request:
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
+
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid #555;
+      border-right: 1px solid #555;
+      padding: 0 40px;
+    }
+}
+
 
 @media print {
     *,
